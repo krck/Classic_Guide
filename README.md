@@ -35,15 +35,13 @@ Setup
 Some basic instructions to run this locally, because its not hosted anymore (thanks AWS!) <br>
 Only [Docker](https://www.docker.com/products/docker-desktop) is required (But hardware virtualization has to be turned on in the BIOS). <br>
 
-Easy Setup (Pre-Build)
-- 
-
 <b>Setup (Local-Build)</b>:
 - Download this repo and open up a shell
 - Make sure Docker(Desktop) is running
 - $ cd "path-to-repo"
 - $ docker-compose build
 - $ docker-compose up
+
 Thats it. The Guide will be available on "localhost/"
 
 <b>For later checks and local cleanup use</b>
@@ -51,3 +49,5 @@ Thats it. The Guide will be available on "localhost/"
 - $ docker image ls -a
 - $ docker container prune -f
 - $ docker image prune -f -a
+
+There is also a way to set this up via the Pre-Build containers on my [DockerHub](https://hub.docker.com/u/krck)
