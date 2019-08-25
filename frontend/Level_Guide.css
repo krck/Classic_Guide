@@ -1,0 +1,198 @@
+
+body {
+	padding-top: 55px;
+	font-family: 'Verdana';
+	font-size: 100%;
+}
+
+.jumptarget {
+	padding-top: 80px;
+	margin-top: -80px;
+}
+
+h2 {
+	font-weight: bold;
+	padding: 5px;
+}
+
+navbar {
+	height: 50px;
+}
+
+.fit-image {
+    max-width: 100%;
+    max-height: 100vh;
+    height: auto;
+}
+
+.modal-lg {
+    max-width: 60% !important;
+}
+
+.dot {
+    height: 20px;
+    width: 20px;
+    position: absolute;
+    z-index: 1100;
+}
+
+/* -------- WRAPPER STYLES (For Toggle) --------- */
+
+#wrapper {
+	padding-left: 0;
+}
+
+#wrapper.toggled {
+	padding-left: 300px;
+}
+
+#sidebar-wrapper {
+	z-index: 1000;
+	position: fixed;
+	left: 300px;
+	width: 0;
+	height: 100%;
+	margin-left: -300px;
+	overflow-y: auto;
+	background: #000;
+}
+
+#wrapper.toggled #sidebar-wrapper {
+	width: 300px;
+}
+
+#page-content-wrapper {
+	width: 100%;
+	position: absolute;
+	padding: 15px;
+}
+
+#wrapper.toggled #page-content-wrapper {
+	position: absolute;
+	margin-right: -300px;
+}
+
+
+/* --------------- SIDEBAR STYLES --------------- */
+
+.sidebar-nav {
+	position: absolute;
+	top: 0;
+	width: 300px;
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+.sidebar-nav li {
+	text-indent: 10px;
+	line-height: 35px;
+}
+
+.sidebar-nav li a {
+	display: block;
+	text-decoration: none;
+	color: #999999;
+}
+
+.sidebar-nav li a:hover {
+	text-decoration: none;
+	color: #fff;
+	background: rgba(255, 255, 255, 0.2);
+}
+
+.sidebar-nav li a:active,
+.sidebar-nav li a:focus {
+	text-decoration: none;
+}
+
+.sidebar-nav>.sidebar-brand {
+	height: 65px;
+	font-size: 18px;
+	line-height: 60px;
+}
+
+.sidebar-nav>.sidebar-brand a {
+	color: #999999;
+}
+
+.sidebar-nav>.sidebar-brand a:hover {
+	color: #fff;
+	background: none;
+}
+
+@media(min-width:768px) {
+	#wrapper {
+		padding-left: 300px;
+	}
+	#wrapper.toggled {
+		padding-left: 0;
+	}
+	#sidebar-wrapper {
+		width: 300px;
+	}
+	#wrapper.toggled #sidebar-wrapper {
+		width: 0;
+	}
+	#page-content-wrapper {
+		padding: 20px;
+		position: relative;
+	}
+	#wrapper.toggled #page-content-wrapper {
+		position: relative;
+		margin-right: 0;
+	}
+}
+
+/* --------------- TABLE STYLES --------------- */
+
+table.tbstyle {
+	width: 100%;
+	text-align: left;
+	margin-bottom: 50px;
+}
+
+table.tbstyle td,
+table.tbstyle th {
+	border: 1px solid #D6D6D6;
+	padding: 3px 3px;
+}
+
+.centerCell {
+	border: 1px solid #D6D6D6;
+	text-align: center;
+	width: 40px;
+	padding: 3px 3px;
+}
+
+.buttonCell {
+	border: 1px solid #D6D6D6;
+	text-align: center;
+	width: 35px;
+}
+
+.checkBoxCell {
+	border: 1px solid #D6D6D6;
+	text-align: center;
+	width: 20px;
+	padding: 3px 3px;
+}
+
+table.tbstyle tr:nth-child(even) {
+	background: #F5F5F5;
+}
+
+table.tbstyle tfoot .links a {
+	display: inline-block;
+	background: #1C6EA4;
+	color: #FFFFFF;
+	padding: 2px 8px;
+	border-radius: 5px;
+}
+
+/* -------------- BUTTON STYLES --------------- */
+
+.btn-xs {
+	padding: 0px;
+	width: 100%;
+}

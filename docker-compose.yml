@@ -1,0 +1,63 @@
+version: '3'
+services:
+    # Database Container
+    mongodb:
+        container_name: classic_database
+        image: mongo:4.0
+        restart: always
+        command: --smallfiles
+        ports: 
+            - 27017:27017
+        environment:
+            #MONGO_INITDB_ROOT_USERNAME: root
+            #MONGO_INITDB_ROOT_PASSWORD: password
+            MONGO_INITDB_DATABASE: classicDB
+        networks:
+            - appnet
+        
+    # Container with the purpose is to seed the Mongo DB with default data, then exit   
+    mongo-seed:
+        container_name: classic_database_seed
+        #image: krck/classic_database:latest
+        build: ./database
+        networks:
+            - appnet
+
+    # Typescript API Container
+    backend:
+        container_name: classic_backend
+        #image: krck/classic_backend:latest
+        build: 
+            context: ./backend/
+            dockerfile: Dockerfile
+        ports:
+            - 3000:3000
+        depends_on:
+            - mongodb
+        networks:
+            - appnet
+
+    # Web-Frontend Container
+    frontend:
+        container_name: classic_frontend
+        #image: krck/classic_frontend:latest
+        build:
+            context: ./frontend/
+            dockerfile: Dockerfile
+        ports:
+            - 80:80
+        depends_on:
+            - backend
+        networks:
+            - appnet
+
+networks:
+    appnet:
+        driver: bridge
+
+# BUILD ALL FROM DOCKER COMPOSE
+# docker-compose build
+# docker-compose up
+# RESET ALL CONTAINERS AND IMAGES
+# docker container prune -f     
+# docker image prune -f -a    
